@@ -1,0 +1,7 @@
+Tests/Test[[:space:]]Documents/pdf/pdf-ingestion-test-suite.pdf filter=lfs diff=lfs merge=lfs -text
+Tests/Test[[:space:]]Documents/pdf/long-pdf-test.pdf filter=lfs diff=lfs merge=lfs -text
+Tests/Test[[:space:]]Documents/txt/Shakespeare.txt filter=lfs diff=lfs merge=lfs -text
+Tests/Test[[:space:]]Documents/pdf/X86_Disassembly.pdf filter=lfs diff=lfs merge=lfs -text
+Tests/Test[[:space:]]Documents/pdf/somatosensory.pdf filter=lfs diff=lfs merge=lfs -text
+Tests/Test[[:space:]]Documents/pdf/simple-pdf-feature-test.pdf filter=lfs diff=lfs merge=lfs -text
+Tests/Test[[:space:]]Documents/ filter=lfs diff=lfs merge=lfs -text
