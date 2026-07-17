@@ -21,12 +21,9 @@ class URLHandler {
     init(url: URL) throws {
         self.url = url
         
-        // If the URL is security scoped, grab its resource. If we can't access the resource throw an error
-        if url.isSecurityScoped() {
-            let accesing = url.startAccessingSecurityScopedResource()
-            guard accesing else { throw LookAtMeError.urlOutOfSandbox }
-            self.accesingSecurityScope = accesing
-        }
+        // TOOD: Detect if the URL is sandboxed so we can throw an approriate error when we can't access the URL.
+        let accesing = url.startAccessingSecurityScopedResource()
+        self.accesingSecurityScope = accesing
 
         guard let fileType = UTType(filenameExtension: url.pathExtension) else { throw LookAtMeError.unkownExtension  }
         self.type = fileType

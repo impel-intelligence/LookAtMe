@@ -15,8 +15,8 @@ public struct PDFViewer: Viewer, View {
     
     @State public var url: URL
     @State public var color: Color
-    
-    
+        
+    @State private var hasResetPosition: Bool = false
     
     public init(url: URL, color: Color) {
         self.url = url
@@ -35,7 +35,8 @@ struct PDFKitWrapper: NSViewRepresentable {
     func makeNSView(context: Context) -> PDFKit.PDFView {
         let view = PDFView()
         view.backgroundColor = NSColor(color)
-        view.document = PDFDocument(url: url)        
+        view.document = PDFDocument(url: url)
+        
         return view
     }
     
