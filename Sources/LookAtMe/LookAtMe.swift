@@ -28,10 +28,12 @@ public struct LookAtMe: View {
             switch urlHandler.type {
             case let item where PDFViewer.supportedTypes.contains(item):
                 PDFViewer(url: urlHandler.url, color: color)
-            case let item where PlainTextViewer.supportedTypes.contains(item):
-                PlainTextViewer(url: urlHandler.url, color: color)
+            case let item where TextViewer.supportedTypes.contains(item):
+                TextViewer(url: urlHandler.url, color: color)
+            case let item where HTMLViewer.supportedTypes.contains(item):
+                HTMLViewer(url: urlHandler.url, color: color)
             default:
-                ContentUnavailableView("Unsupported File", systemImage: "pc")
+                ContentUnavailableView("Unsupported File", systemImage: "pc", description: Text("Can not open file with type \(urlHandler.type.identifier)"))
             }
         } else if let loadingError {
             ContentUnavailableView(loadingError.localizedDescription, systemImage: "pc")
