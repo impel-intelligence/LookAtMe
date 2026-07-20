@@ -18,7 +18,7 @@ struct LegacyHTMLView: NSViewRepresentable {
     }
 
     func updateNSView(_ webView: WKWebView, context: Context) {
-        webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+        webView.loadFileURL(url, allowingReadAccessTo: url)
     }
 }
 #elseif canImport(UIKit)

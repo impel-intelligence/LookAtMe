@@ -22,12 +22,13 @@ public struct HTMLViewer: Viewer, View {
         self.color = color
     }
     
+    // We are using a legacy WebView since the more modern WebView struggles to load sandboxed content. It will throw 'Could not create a sandbox extension for '/'' whenever it tries to load a url that is security scoped.
     public var body: some View {
-        if #available(macOS 26.0, iOS 26.0, tvOS 26.0, *) {
-            WebView(url: url)
-        } else {
-            LegacyHTMLView(url: url)
-        }
+//        if #available(macOS 26.0, iOS 26.0, tvOS 26.0, *) {
+//            WebView(url: url)
+//        } else {
+        LegacyHTMLView(url: url)
+//        }
     }
 }
 
